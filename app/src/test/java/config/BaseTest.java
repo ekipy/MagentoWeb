@@ -1,4 +1,4 @@
-package utilities;
+package config;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -8,7 +8,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class BaseTest {
     protected static WebDriver driver;
 
-    protected void setUp() {
+    public void setUp() {
+
         // Initialize WebDriver here (e.g., ChromeDriver, FirefoxDriver)
         // driver = new ChromeDriver();
         // driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
