@@ -10,10 +10,13 @@ Feature: Register Account
     And saya menekan tombol create
     Then sistem menampilkan pesan "<message>"
     Examples:
-      | firstname | lastname  | email                | password    | confirmPassword | message                  |
-      |           |           |                      |             |                 | This is a required field.|
-      |           | Doe       | fimotest@gmail.com   | Password1@  | Password1@      | This is a required field.|
-      |fimo       |           | fimotest@gmail.com   | Password1@  | Password1@      | This is a required field.|
-      |fimo       | Doe       |                      | Password1@  | Password1@      | This is a required field.|
-      |fimo       | Doe       | fimotest@gmail.com   |             | Password1@      | This is a required field.|
-      |fimo       | Doe       | fimotest@gmail.com   | Password1@  |                 | This is a required field.|
+      | firstname | lastname  | email                | password     | confirmPassword | message                  |
+      |           |           |                      |              |                 | This is a required field.|
+      |           | Doe       | fimotest@gmail.com   | Password1@   | Password1@      | This is a required field.|
+      |fimo       |           | fimotest@gmail.com   | Password1@   | Password1@      | This is a required field.|
+      |fimo       | Doe       |                      | Password1@   | Password1@      | This is a required field.|
+      |fimo       | Doe       | fimotest@gmail.com   |              | Password1@      | This is a required field.|
+      |fimo       | Doe       | fimotest@gmail.com   | Password1@   |                 | This is a required field.|
+      |fimo       | Doe       | fimotest@gmail.com   | Passwor      | Password1@      | Minimum length of this field must be equal or greater than 8 symbols. Leading and trailing spaces will be ignored.|
+      |fimo       | Doe       | fimotestgmail.com    | Password1@   | Password1@      | Please enter a valid email address (Ex: johndoe@domain.com). |
+      

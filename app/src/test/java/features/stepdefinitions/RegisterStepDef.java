@@ -1,6 +1,6 @@
 package features.stepdefinitions;
 
-import static org.junit.Assert.assertEquals;
+import org.junit.Test;
 
 import config.BaseTest;
 import io.cucumber.java.After;
@@ -14,6 +14,7 @@ public class RegisterStepDef extends BaseTest {
 
     protected RegisterPage registerPage;
 
+ 
     @Before
     public void setUp() {
         // Initialize the WebDriver and other necessary setups if needed
@@ -91,6 +92,12 @@ public class RegisterStepDef extends BaseTest {
                 break;
             case "Please make sure your passwords match.":
                 actualMessage = registerPage.getConfirmPasswordError();
+                break;
+            case "Minimum password length is 8 characters.":
+                actualMessage = registerPage.getPasswordError();
+                break;
+            case "Email address is not valid.":
+                actualMessage = registerPage.getEmailAddressError();
                 break;
             default:
                 System.out.println("No error message to verify");

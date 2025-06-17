@@ -1,5 +1,7 @@
 package features.stepdefinitions;
 
+import org.junit.Test;
+
 import config.BaseTest;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
