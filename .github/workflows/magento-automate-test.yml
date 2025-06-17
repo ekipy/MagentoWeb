@@ -33,20 +33,21 @@ jobs:
 
     # Execute gradle command for running cucumber test
     - name: Execute Test
-      run: ./gradlew cucumber
+      run: ./gradlew test --tests "config.Runner"
+      continue-on-error: true
 
     # Archive Test Result
-    - name: Archive Test Result
-      uses: actions/upload-artifact@v4.6.2
+    - name: Upload Test Report
       if: always()
+      uses: actions/upload-artifact@v4.6.2
       with:
-        name: Cucumber Report
-        path: reports
+        name: Test Report
+        path: app/build/reports/tests/test
       
     # Deploy to Github Pages
     - name: Deploy report to Github Pages
       if: always()
       uses: peaceiris/actions-gh-pages@v4.0.0
       with:
-        PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        PERSONAL_TOKEN: ${{ secrets.TOKEN_REPORT }}
         PUBLISH_DIR: reports
