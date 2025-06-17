@@ -13,7 +13,7 @@ public class BaseTest {
         // Initialize WebDriver here (e.g., ChromeDriver, FirefoxDriver)
         // driver = new ChromeDriver();
         // driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
+        //headeless mode setup for ChromeDriver
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless"); // Run in headless mode
         options.addArguments("--disable-gpu"); // Disable GPU acceleration
