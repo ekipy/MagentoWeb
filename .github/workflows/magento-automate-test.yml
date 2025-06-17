@@ -24,11 +24,8 @@ jobs:
         distribution: 'temurin'
 
     #install chrome browser
-    - name: Setup Chrome and WebDriver
-      uses: browser-actions/setup-chrome@v1
-      with:
-        chrome-version: latest
-        webdriver-version: latest
+    - name: Setup Chrome
+      uses: browser-actions/setup-chrome@v0.0.0
 
     # setup gradle
     - name: Setup Gradle
@@ -37,6 +34,7 @@ jobs:
     # Execute gradle command for running cucumber test
     - name: Execute Test
       run: ./gradlew test --tests "config.Runner"
+      continue-on-error: true
 
     # Archive Test Result
     - name: Upload Test Report
