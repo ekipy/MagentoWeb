@@ -1,7 +1,5 @@
 package features.stepdefinitions;
 
-import org.junit.Test;
-
 import config.BaseTest;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
