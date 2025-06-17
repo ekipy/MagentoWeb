@@ -15,7 +15,7 @@ public class BaseTest {
         // driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         ChromeOptions options = new ChromeOptions();
-        // options.addArguments("--headless"); // Run in headless mode
+        options.addArguments("--headless"); // Run in headless mode
         options.addArguments("--disable-gpu"); // Disable GPU acceleration
         options.addArguments("--window-size=1920,1080"); // Set window size for headless mode
         options.addArguments("--no-sandbox"); // Bypass OS security model
