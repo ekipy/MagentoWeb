@@ -36,12 +36,12 @@ jobs:
       run: ./gradlew test --tests "config.Runner"
 
     # Archive Test Result
-    - name: Archive Test Result
-      uses: actions/upload-artifact@v4.6.2
+    - name: Upload Test Report
       if: always()
+      uses: actions/upload-artifact@v4.6.2
       with:
         name: Test Report
-        path: target
+        path: app/build/reports/tests/test
       
     # Deploy to Github Pages
     - name: Deploy report to Github Pages
