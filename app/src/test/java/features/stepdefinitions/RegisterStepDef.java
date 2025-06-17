@@ -76,7 +76,7 @@ public class RegisterStepDef extends BaseTest {
     @Then("sistem menampilkan pesan {string}")
     public void sistemMenampilkanPesan(String expectedMessage) {
         String actualMessage = "";
-
+// switch statement to handle different expected messages
         switch (expectedMessage) {
             case "First Name is required.":
                 actualMessage = registerPage.getFirstNameError();
